@@ -32,6 +32,7 @@ function delete($route, $path_to_include)
 }
 function any($route, $path_to_include)
 {
+	http_response_code(404);
 	route($route, $path_to_include);
 }
 function route($route, $path_to_include)
