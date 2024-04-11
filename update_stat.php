@@ -36,7 +36,7 @@ if ($sth->rowCount() == 0) {
 	UPDATE Stat 
 	SET record = :record,
 		email  = :email
-	WHERE secret = :secret AND :record > record;
+	WHERE secret = :secret AND :record < record;
 	SQL);
 }
 
