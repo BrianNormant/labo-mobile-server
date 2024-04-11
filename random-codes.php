@@ -29,11 +29,10 @@ if (isset($_REQUEST["nbCouleurs"])) {
 	SQL);
 }
 
+
 $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 $data = array_reduce($data, "r_fuc", []);
+$data = $data[array_rand($data, 1)];
 
 header("Content-Type: application/json");
 echo json_encode($data);
-
-
-
